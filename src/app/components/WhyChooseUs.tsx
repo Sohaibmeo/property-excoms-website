@@ -4,87 +4,83 @@ import { Award, Shield, TrendingUp, Users } from 'lucide-react';
 const features = [
   {
     icon: Award,
-    title: 'Market Expertise',
-    description: 'Decades of combined experience in the UK property market, providing unmatched insights and knowledge.',
+    title: 'Selective market access',
+    description: 'We focus on better-qualified opportunities, including discreet sales and landlord-led instructions that rarely suit a mass-market search.',
   },
   {
     icon: Shield,
-    title: 'Trusted Guidance',
-    description: 'Transparent, ethical advice tailored to your unique needs and long-term property goals.',
+    title: 'Advice before volume',
+    description: 'Every recommendation is tested against your brief, timing, risk tolerance, holding plan, and exit route.',
   },
   {
     icon: TrendingUp,
-    title: 'Investment Insights',
-    description: 'Data-driven analysis and strategic recommendations to maximize your property portfolio returns.',
+    title: 'Commercial discipline',
+    description: 'Investor work includes rent evidence, yield context, capex pressure, liquidity, and the practical levers that affect performance.',
   },
   {
     icon: Users,
-    title: 'Dedicated Support',
-    description: 'Personal account management and 24/7 support throughout your property journey.',
+    title: 'Senior-led service',
+    description: 'You work with a consistent advisory contact from brief to completion, handover, or ongoing management.',
   },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: '#F8F7F4' }}>
+    <section className="py-20 lg:py-24" style={{ backgroundColor: '#F7F4ED' }}>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start"
         >
-          <h2
-            className="text-4xl md:text-5xl mb-4"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              color: '#1E2A44',
-              fontWeight: 700,
-            }}
-          >
-            Why Choose ExComS Property
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#2D2D2D' }}>
-            Your trusted partner for premium property consultancy and investment guidance.
-          </p>
-        </motion.div>
+          <div>
+            <p className="section-kicker mb-3">Why ExComS</p>
+            <h2 className="section-title mb-5">A consultancy posture, not a listings habit.</h2>
+            <div className="gold-divider mb-6" />
+            <p className="section-copy">
+              Premium clients need clarity, confidentiality, and commercial judgement. ExComS brings structure
+              to complex property decisions, helping you move with confidence rather than volume-led pressure.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: '#1E2A44' }}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, delay: index * 0.08 }}
+                  className="premium-card rounded-sm p-6"
                 >
-                  <Icon size={36} style={{ color: '#C8A96B' }} />
-                </div>
-                <h3
-                  className="text-2xl mb-4"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    color: '#1E2A44',
-                    fontWeight: 600,
-                  }}
-                >
-                  {feature.title}
-                </h3>
-                <p className="leading-relaxed" style={{ color: '#2D2D2D' }}>
-                  {feature.description}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
+                  <div
+                    className="w-11 h-11 rounded-sm flex items-center justify-center mb-5"
+                    style={{ backgroundColor: '#17233B' }}
+                  >
+                    <Icon size={22} style={{ color: '#C7A463' }} />
+                  </div>
+                  <h3
+                    className="text-xl mb-3"
+                    style={{
+                      fontFamily: "'Playfair Display', serif",
+                      color: '#17233B',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(36, 39, 44, 0.76)' }}>
+                    {feature.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

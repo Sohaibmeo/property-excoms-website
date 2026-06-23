@@ -4,36 +4,34 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { motion } from 'motion/react';
-import { Phone, Mail, MapPin, Calendar } from 'lucide-react';
+import { Calendar, CheckCircle2 } from 'lucide-react';
+
+const expectations = [
+  'Brief review within one business day',
+  'Private discussion with a senior advisor',
+  'Clear next steps before any engagement',
+];
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 lg:py-28" style={{ backgroundColor: '#F8F7F4' }}>
+    <section id="contact" className="py-20 lg:py-24" style={{ backgroundColor: '#F7F4ED' }}>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-3xl mb-14"
         >
-          <h2
-            className="text-4xl md:text-5xl mb-4"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              color: '#1E2A44',
-              fontWeight: 700,
-            }}
-          >
-            Get In Touch
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#2D2D2D' }}>
-            Ready to start your property journey? Our expert consultants are here to help.
+          <p className="section-kicker mb-3">Start With a Brief</p>
+          <h2 className="section-title mb-4">Tell us what the property decision needs to achieve.</h2>
+          <p className="section-copy">
+            The best first conversation is specific. Share your goal, timing, approximate budget or asset value,
+            and any constraints you already know.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -41,62 +39,78 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <Card className="p-8 bg-white border-none shadow-lg">
+            <Card className="premium-card p-6 md:p-8 rounded-sm">
               <h3
                 className="text-2xl mb-6"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  color: '#1E2A44',
+                  color: '#17233B',
                   fontWeight: 600,
                 }}
               >
-                Send Us a Message
+                Request a private consultation
               </h3>
 
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
+                    <Label htmlFor="firstName">First name</Label>
                     <Input id="firstName" placeholder="John" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
+                    <Label htmlFor="lastName">Last name</Label>
                     <Input id="lastName" placeholder="Smith" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email">Email address</Label>
                     <Input id="email" type="email" placeholder="john.smith@example.com" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone">Phone number</Label>
                     <Input id="phone" type="tel" placeholder="+44 20 1234 5678" />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="interest">Area of Interest</Label>
-                  <select
-                    id="interest"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
-                    style={{ backgroundColor: '#F8F7F4' }}
-                  >
-                    <option value="">Select an option</option>
-                    <option value="buy">Buying Property</option>
-                    <option value="rent">Renting Property</option>
-                    <option value="management">Property Management</option>
-                    <option value="investment">Investment Opportunities</option>
-                    <option value="consultation">General Consultation</option>
-                  </select>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="interest">Primary need</Label>
+                    <select
+                      id="interest"
+                      className="w-full h-10 px-3 py-2 border border-[#17233B]/15 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#C7A463]"
+                      style={{ backgroundColor: '#F7F4ED' }}
+                    >
+                      <option value="">Select a service</option>
+                      <option value="buy">Acquisition advisory</option>
+                      <option value="rent">Premium rental search</option>
+                      <option value="management">Landlord management review</option>
+                      <option value="investment">Investor sourcing</option>
+                      <option value="consultation">General consultation</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="timeline">Decision timeline</Label>
+                    <select
+                      id="timeline"
+                      className="w-full h-10 px-3 py-2 border border-[#17233B]/15 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#C7A463]"
+                      style={{ backgroundColor: '#F7F4ED' }}
+                    >
+                      <option value="">Select timing</option>
+                      <option value="now">Ready now</option>
+                      <option value="quarter">Within 3 months</option>
+                      <option value="six-months">Within 6 months</option>
+                      <option value="exploring">Exploring options</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">Brief</Label>
                   <Textarea
                     id="message"
-                    placeholder="Tell us about your property needs..."
+                    placeholder="Tell us about your target location, budget, property type, investment goals, or management challenge."
                     rows={6}
                   />
                 </div>
@@ -104,16 +118,15 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
-                  style={{ backgroundColor: '#1E2A44', color: '#F8F7F4' }}
+                  className="w-full rounded-sm"
+                  style={{ backgroundColor: '#17233B', color: '#F7F4ED' }}
                 >
-                  Send Message
+                  Submit confidential brief
                 </Button>
               </form>
             </Card>
           </motion.div>
 
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -121,127 +134,52 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            {/* Office Information */}
-            <Card className="p-8 bg-white border-none shadow-lg">
+            <Card className="premium-card p-7 rounded-sm">
               <h3
-                className="text-2xl mb-6"
+                className="text-2xl mb-5"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  color: '#1E2A44',
+                  color: '#17233B',
                   fontWeight: 600,
                 }}
               >
-                Contact Information
+                What happens next
               </h3>
-
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#1E2A44' }}
-                  >
-                    <Phone size={20} style={{ color: '#C8A96B' }} />
-                  </div>
-                  <div>
-                    <p className="font-medium mb-1" style={{ color: '#1E2A44' }}>
-                      Phone
-                    </p>
-                    <p style={{ color: '#2D2D2D' }}>+44 20 7123 4567</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#3F6B5A' }}
-                  >
-                    <Mail size={20} style={{ color: '#F8F7F4' }} />
-                  </div>
-                  <div>
-                    <p className="font-medium mb-1" style={{ color: '#1E2A44' }}>
-                      Email
-                    </p>
-                    <p style={{ color: '#2D2D2D' }}>info@excoms.property</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#C8A96B' }}
-                  >
-                    <MapPin size={20} style={{ color: '#1E2A44' }} />
-                  </div>
-                  <div>
-                    <p className="font-medium mb-1" style={{ color: '#1E2A44' }}>
-                      Office
-                    </p>
-                    <p style={{ color: '#2D2D2D' }}>
-                      123 Mayfair Avenue<br />
-                      London, W1K 1AB<br />
-                      United Kingdom
+              <div className="space-y-4">
+                {expectations.map((item) => (
+                  <div key={item} className="flex gap-3">
+                    <CheckCircle2 size={20} className="mt-0.5 flex-shrink-0" style={{ color: '#3D6658' }} />
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(36, 39, 44, 0.78)' }}>
+                      {item}
                     </p>
                   </div>
-                </div>
+                ))}
               </div>
             </Card>
 
-            {/* Book Consultation */}
-            <Card
-              className="p-8 border-none shadow-lg"
-              style={{ backgroundColor: '#1E2A44' }}
-            >
-              <div className="text-center">
-                <Calendar size={48} className="mx-auto mb-4" style={{ color: '#C8A96B' }} />
-                <h3
-                  className="text-2xl mb-3"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    color: '#F8F7F4',
-                    fontWeight: 600,
-                  }}
-                >
-                  Book a Consultation
-                </h3>
-                <p className="mb-6 leading-relaxed" style={{ color: '#F8F7F4', opacity: 0.9 }}>
-                  Schedule a free consultation with our property experts.
-                </p>
-                <Button
-                  size="lg"
-                  className="w-full"
-                  style={{ backgroundColor: '#C8A96B', color: '#1E2A44' }}
-                >
-                  Schedule Now
-                </Button>
-              </div>
-            </Card>
-
-            {/* Office Hours */}
-            <Card className="p-8 bg-white border-none shadow-lg">
+            <Card className="p-7 border-none shadow-lg rounded-sm" style={{ backgroundColor: '#17233B' }}>
+              <Calendar size={42} className="mb-4" style={{ color: '#C7A463' }} />
               <h3
-                className="text-xl mb-4"
+                className="text-2xl mb-3"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  color: '#1E2A44',
+                  color: '#F7F4ED',
                   fontWeight: 600,
                 }}
               >
-                Office Hours
+                Prefer to speak first?
               </h3>
-              <div className="space-y-2 text-sm" style={{ color: '#2D2D2D' }}>
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span>By Appointment</span>
-                </div>
-              </div>
+              <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
+                Book a short call to confirm whether we are the right advisory fit for your brief.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="w-full rounded-sm"
+                style={{ backgroundColor: '#C7A463', color: '#17233B' }}
+              >
+                <a href="mailto:info@excoms.property?subject=Private%20property%20consultation">Book by email</a>
+              </Button>
             </Card>
           </motion.div>
         </div>

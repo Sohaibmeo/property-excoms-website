@@ -1,42 +1,44 @@
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
+
+const trustSignals = ['Prime London acquisition', 'Landlord portfolio care', 'Private investor sourcing'];
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBwcm9wZXJ0eSUyMGFyY2hpdGVjdHVyZSUyMGV4dGVyaW9yfGVufDF8fHx8MTc4MjIxNTI0OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Luxury modern property"
+          alt="Private contemporary residence"
           className="w-full h-full object-cover"
         />
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, rgba(30, 42, 68, 0.85), rgba(30, 42, 68, 0.4))',
+            background: 'linear-gradient(90deg, rgba(16, 25, 43, 0.92) 0%, rgba(23, 35, 59, 0.78) 44%, rgba(23, 35, 59, 0.24) 100%)',
           }}
         />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#F7F4ED] to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <p className="section-kicker mb-5">Premium Property Consultancy</p>
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl mb-6 leading-[0.98] max-w-4xl"
               style={{
                 fontFamily: "'Playfair Display', serif",
-                color: '#F8F7F4',
+                color: '#F7F4ED',
                 fontWeight: 700,
               }}
             >
-              Property Guidance That Moves You Forward
+              Discreet property advice for considered decisions.
             </h1>
           </motion.div>
 
@@ -45,44 +47,63 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl mb-8 leading-relaxed"
-            style={{ color: '#F8F7F4', maxWidth: '600px' }}
+            style={{ color: 'rgba(247, 244, 237, 0.9)', maxWidth: '680px' }}
           >
-            Helping buyers, renters, landlords, and investors make confident property decisions
-            through expert advice and tailored opportunities.
+            ExComS Property helps private buyers, landlords, and investors source, evaluate,
+            negotiate, and manage premium property with calm, evidence-led guidance.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 mb-10"
           >
             <Button
+              asChild
               size="lg"
-              style={{ backgroundColor: '#C8A96B', color: '#1E2A44' }}
-              className="group hover:opacity-90 transition-all px-8 py-6 text-lg"
+              style={{ backgroundColor: '#C7A463', color: '#17233B' }}
+              className="group hover:opacity-90 transition-all px-8 py-6 text-base rounded-sm"
             >
-              Explore Opportunities
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              <a href="#opportunities">
+                View Curated Opportunities
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
-              className="border-2 text-white border-white bg-transparent hover:bg-white/10 px-8 py-6 text-lg"
+              className="border text-white border-white/70 bg-white/5 hover:bg-white/10 px-8 py-6 text-base rounded-sm"
             >
-              <Calendar className="mr-2" size={20} />
-              Book a Consultation
+              <a href="#contact">
+                <Calendar className="mr-2" size={20} />
+                Book a Private Call
+              </a>
             </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
+            className="grid gap-3 sm:grid-cols-3 max-w-3xl"
+          >
+            {trustSignals.map((signal) => (
+              <div key={signal} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(247, 244, 237, 0.88)' }}>
+                <CheckCircle2 size={17} style={{ color: '#C7A463' }} />
+                <span>{signal}</span>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

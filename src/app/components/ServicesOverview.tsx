@@ -6,53 +6,53 @@ import { Button } from './ui/button';
 const services = [
   {
     icon: Home,
-    title: 'Buy Property',
-    description: 'Expert guidance through every step of purchasing your ideal residential or commercial property, with exclusive access to premium opportunities.',
-    color: '#3F6B5A',
+    title: 'Acquisition Advisory',
+    description: 'Search briefs, valuation checks, negotiation strategy, and due diligence for prime residential and commercial purchases.',
+    color: '#3D6658',
+    href: '#opportunities',
   },
   {
     icon: Key,
-    title: 'Rent Property',
-    description: 'Discover exceptional rental properties tailored to your lifestyle and business needs, with comprehensive tenant support services.',
-    color: '#C8A96B',
+    title: 'Premium Lettings',
+    description: 'High-quality rental search, shortlisting, viewing support, and tenancy guidance for executives, families, and relocations.',
+    color: '#C7A463',
+    href: '#opportunities',
   },
   {
     icon: Building2,
-    title: 'Property Management',
-    description: 'Professional property management services for landlords, covering everything from tenant selection to maintenance coordination.',
-    color: '#1E2A44',
+    title: 'Managed Assets',
+    description: 'A calmer landlord experience with tenant care, compliance oversight, maintenance coordination, and reporting.',
+    color: '#17233B',
+    href: '#management',
   },
   {
     icon: TrendingUp,
-    title: 'Investment Opportunities',
-    description: 'Strategic investment advice and access to high-yield property opportunities, from buy-to-let to commercial developments.',
-    color: '#C8A96B',
+    title: 'Investor Sourcing',
+    description: 'Off-market and selectively marketed opportunities assessed for yield, risk, exit route, and portfolio fit.',
+    color: '#C7A463',
+    href: '#investment',
   },
 ];
 
 export function ServicesOverview() {
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: '#F8F7F4' }}>
+    <section id="advisory" className="py-20 lg:py-24" style={{ backgroundColor: '#F7F4ED' }}>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-3xl mb-14"
         >
+          <p className="section-kicker mb-3">How We Advise</p>
           <h2
-            className="text-4xl md:text-5xl mb-4"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              color: '#1E2A44',
-              fontWeight: 700,
-            }}
+            className="section-title mb-4"
           >
-            Comprehensive Property Services
+            Property decisions deserve more than listings.
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#2D2D2D' }}>
-            From acquisition to management, we provide expert guidance at every stage of your property journey.
+          <p className="section-copy">
+            We work from a clear brief, test assumptions against the market, and stay close through the decisions that affect value, risk, and long-term fit.
           </p>
         </motion.div>
 
@@ -67,33 +67,36 @@ export function ServicesOverview() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-2xl transition-all duration-300 group cursor-pointer bg-white border-none">
+                <Card className="premium-card p-7 h-full group rounded-sm">
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                    className="w-14 h-14 rounded-sm flex items-center justify-center mb-7 group-hover:scale-105 transition-transform"
                     style={{ backgroundColor: `${service.color}15` }}
                   >
-                    <Icon size={32} style={{ color: service.color }} />
+                    <Icon size={28} style={{ color: service.color }} />
                   </div>
                   <h3
-                    className="text-2xl mb-4"
+                    className="text-2xl mb-3"
                     style={{
                       fontFamily: "'Playfair Display', serif",
-                      color: '#1E2A44',
+                      color: '#17233B',
                       fontWeight: 600,
                     }}
                   >
                     {service.title}
                   </h3>
-                  <p className="mb-6 leading-relaxed" style={{ color: '#2D2D2D' }}>
+                  <p className="mb-7 leading-relaxed text-sm" style={{ color: 'rgba(36, 39, 44, 0.78)' }}>
                     {service.description}
                   </p>
                   <Button
+                    asChild
                     variant="ghost"
                     className="group/btn p-0 h-auto hover:bg-transparent"
                     style={{ color: service.color }}
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
+                    <a href={service.href}>
+                      Explore path
+                      <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
+                    </a>
                   </Button>
                 </Card>
               </motion.div>

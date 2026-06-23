@@ -6,40 +6,38 @@ import { Button } from './ui/button';
 const investments = [
   {
     icon: Home,
-    title: 'Residential Investments',
-    description: 'High-value residential properties in prime London locations, offering strong capital appreciation potential.',
-    yield: '4.2% - 5.8%',
-    minInvestment: '£500,000',
+    title: 'Prime Residential',
+    description: 'Core London homes assessed for scarcity, buyer depth, refurbishment potential, and long-term liquidity.',
+    metric: 'Capital preservation',
+    ticket: 'GBP 750k+',
   },
   {
     icon: KeyRound,
-    title: 'Buy-to-Let Opportunities',
-    description: 'Carefully selected rental properties with verified tenant demand and proven income streams.',
-    yield: '5.5% - 7.2%',
-    minInvestment: '£350,000',
+    title: 'Buy-to-Let',
+    description: 'Income-led acquisitions with rent evidence, local demand checks, compliance review, and management planning.',
+    metric: 'Income strategy',
+    ticket: 'GBP 350k+',
   },
   {
     icon: Building,
-    title: 'Commercial Property',
-    description: 'Office, retail, and mixed-use developments with established corporate tenants and long-term leases.',
-    yield: '6.0% - 8.5%',
-    minInvestment: '£1,000,000',
+    title: 'Commercial Assets',
+    description: 'Office, retail, and mixed-use opportunities reviewed around tenant covenant, lease structure, and capex exposure.',
+    metric: 'Lease analysis',
+    ticket: 'GBP 1m+',
   },
   {
     icon: Rocket,
-    title: 'Off-Plan Developments',
-    description: 'Early-stage investment in new developments with significant upside potential and flexible payment plans.',
-    yield: '8.0% - 12.0%',
-    minInvestment: '£250,000',
+    title: 'Development & Off-Plan',
+    description: 'Selective early-stage opportunities where delivery risk, payment schedule, location fundamentals, and exit route are clear.',
+    metric: 'Risk review',
+    ticket: 'GBP 250k+',
   },
 ];
 
 export function InvestmentOpportunities() {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden" style={{ backgroundColor: '#1E2A44' }}>
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5" style={{ backgroundColor: '#C8A96B', filter: 'blur(100px)' }} />
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-5" style={{ backgroundColor: '#3F6B5A', filter: 'blur(100px)' }} />
+    <section id="investment" className="py-20 lg:py-24 relative overflow-hidden" style={{ backgroundColor: '#17233B' }}>
+      <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'linear-gradient(135deg, #C7A463 1px, transparent 1px)', backgroundSize: '42px 42px' }} />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
@@ -47,20 +45,22 @@ export function InvestmentOpportunities() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-3xl mb-14"
         >
+          <p className="section-kicker mb-3">Investor Advisory</p>
           <h2
-            className="text-4xl md:text-5xl mb-4"
+            className="text-3xl md:text-5xl leading-tight mb-5"
             style={{
               fontFamily: "'Playfair Display', serif",
-              color: '#F8F7F4',
+              color: '#F7F4ED',
               fontWeight: 700,
             }}
           >
-            Investment Opportunities
+            Investment work with the risk still visible.
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#F8F7F4', opacity: 0.9 }}>
-            Diversified property investment solutions designed to build wealth and generate passive income.
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
+            We avoid dressing every opportunity as a win. ExComS frames the upside, the constraints,
+            the management realities, and the questions worth answering before capital is committed.
           </p>
         </motion.div>
 
@@ -76,65 +76,63 @@ export function InvestmentOpportunities() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <Card
-                  className="p-8 h-full hover:shadow-2xl transition-all duration-300 group cursor-pointer border-none"
-                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(10px)' }}
+                  className="p-7 h-full transition-all duration-300 group rounded-sm border"
+                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.06)', borderColor: 'rgba(247, 244, 237, 0.12)' }}
                 >
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
-                    style={{ backgroundColor: '#C8A96B' }}
+                    className="w-14 h-14 rounded-sm flex items-center justify-center mb-6 group-hover:scale-105 transition-transform"
+                    style={{ backgroundColor: '#C7A463' }}
                   >
-                    <Icon size={32} style={{ color: '#1E2A44' }} />
+                    <Icon size={28} style={{ color: '#17233B' }} />
                   </div>
                   <h3
                     className="text-2xl mb-4"
                     style={{
                       fontFamily: "'Playfair Display', serif",
-                      color: '#F8F7F4',
+                      color: '#F7F4ED',
                       fontWeight: 600,
                     }}
                   >
                     {investment.title}
                   </h3>
-                  <p className="mb-6 leading-relaxed" style={{ color: '#F8F7F4', opacity: 0.9 }}>
+                  <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
                     {investment.description}
                   </p>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm" style={{ color: '#F8F7F4', opacity: 0.7 }}>
-                        Expected Yield
-                      </span>
-                      <span
-                        className="font-semibold"
-                        style={{ color: '#C8A96B', fontFamily: "'Playfair Display', serif" }}
-                      >
-                        {investment.yield}
+                  <div className="space-y-3 mb-6 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <span style={{ color: 'rgba(247, 244, 237, 0.62)' }}>Focus</span>
+                      <span className="text-right font-semibold" style={{ color: '#C7A463' }}>
+                        {investment.metric}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm" style={{ color: '#F8F7F4', opacity: 0.7 }}>
-                        Min. Investment
-                      </span>
-                      <span
-                        className="font-semibold"
-                        style={{ color: '#C8A96B', fontFamily: "'Playfair Display', serif" }}
-                      >
-                        {investment.minInvestment}
+                    <div className="flex justify-between gap-4">
+                      <span style={{ color: 'rgba(247, 244, 237, 0.62)' }}>Typical brief</span>
+                      <span className="text-right font-semibold" style={{ color: '#C7A463' }}>
+                        {investment.ticket}
                       </span>
                     </div>
                   </div>
                   <Button
+                    asChild
                     variant="ghost"
                     className="w-full group/btn hover:bg-white/10"
-                    style={{ color: '#C8A96B' }}
+                    style={{ color: '#C7A463' }}
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
+                    <a href="#contact">
+                      Discuss strategy
+                      <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
+                    </a>
                   </Button>
                 </Card>
               </motion.div>
             );
           })}
         </div>
+
+        <p className="mt-8 text-xs leading-relaxed max-w-3xl" style={{ color: 'rgba(247, 244, 237, 0.55)' }}>
+          Figures and entry levels are indicative examples only. Property investments can rise or fall in value,
+          and suitability depends on individual circumstances, tax position, finance terms, and holding period.
+        </p>
       </div>
     </section>
   );
