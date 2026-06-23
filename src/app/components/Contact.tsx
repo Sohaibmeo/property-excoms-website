@@ -31,15 +31,15 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 h-full"
           >
-            <Card className="premium-card p-6 md:p-8 rounded-sm">
+            <Card className="premium-card p-6 md:p-8 rounded-sm h-full">
               <h3
                 className="text-2xl mb-6"
                 style={{
@@ -132,7 +132,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="grid gap-6 h-full"
           >
             <Card className="premium-card p-7 rounded-sm">
               <h3
@@ -157,21 +157,23 @@ export function Contact() {
               </div>
             </Card>
 
-            <Card className="p-7 border-none shadow-lg rounded-sm" style={{ backgroundColor: '#17233B' }}>
-              <Calendar size={42} className="mb-4" style={{ color: '#C7A463' }} />
-              <h3
-                className="text-2xl mb-3"
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  color: '#F7F4ED',
-                  fontWeight: 600,
-                }}
-              >
-                Prefer to speak first?
-              </h3>
-              <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
-                Book a short call to confirm whether we are the right advisory fit for your brief.
-              </p>
+            <Card className="p-7 border-none shadow-lg rounded-sm flex flex-col justify-between" style={{ backgroundColor: '#17233B' }}>
+              <div>
+                <Calendar size={42} className="mb-4" style={{ color: '#C7A463' }} />
+                <h3
+                  className="text-2xl mb-3"
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    color: '#F7F4ED',
+                    fontWeight: 600,
+                  }}
+                >
+                  Prefer to speak first?
+                </h3>
+                <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
+                  Book a short call to confirm whether we are the right advisory fit for your brief.
+                </p>
+              </div>
               <Button
                 asChild
                 size="lg"
