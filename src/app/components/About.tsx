@@ -65,10 +65,10 @@ export function About() {
                     fontWeight: 700,
                   }}
                 >
-                  25+ Years
+                  Private Briefs
                 </div>
                 <div className="text-sm" style={{ color: '#17233B', opacity: 0.9 }}>
-                  Combined property advisory experience
+                  Advisory work shaped around discretion, evidence, and long-term fit
                 </div>
               </Card>
             </motion.div>

@@ -2,7 +2,7 @@ import { Button } from './ui/button';
 import { motion } from 'motion/react';
 import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
-const trustSignals = ['Prime London acquisition', 'Landlord portfolio care', 'Private investor sourcing'];
+const trustSignals = ['Private acquisition advice', 'Landlord portfolio care', 'Investment due diligence'];
 
 export function Hero() {
   return (
@@ -65,8 +65,8 @@ export function Hero() {
               style={{ backgroundColor: '#C7A463', color: '#17233B' }}
               className="group hover:opacity-90 transition-all px-8 py-6 text-base rounded-sm"
             >
-              <a href="#opportunities">
-                View Curated Opportunities
+              <a href="#contact">
+                Start a Private Brief
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </a>
             </Button>

@@ -5,7 +5,7 @@ const features = [
   {
     icon: Award,
     title: 'Selective market access',
-    description: 'We focus on better-qualified opportunities, including discreet sales and landlord-led instructions that rarely suit a mass-market search.',
+    description: 'We focus on better-qualified routes, including discreet conversations and landlord-led instructions that rarely suit a mass-market search.',
   },
   {
     icon: Shield,
@@ -37,7 +37,7 @@ export function WhyChooseUs() {
         >
           <div>
             <p className="section-kicker mb-3">Why ExComS</p>
-            <h2 className="section-title mb-5">A consultancy posture, not a listings habit.</h2>
+            <h2 className="section-title mb-5">A consultancy posture, not a sales posture.</h2>
             <div className="gold-divider mb-6" />
             <p className="section-copy">
               Premium clients need clarity, confidentiality, and commercial judgement. ExComS brings structure

@@ -26,11 +26,11 @@ const services = [
   },
 ];
 
-const stats = [
-  { value: '500+', label: 'Managed and advised properties' },
-  { value: '24/7', label: 'Maintenance response route' },
-  { value: '98%', label: 'Reported client satisfaction' },
-  { value: 'GBP 2.5B+', label: 'Advised property value' },
+const managementPrinciples = [
+  { value: 'Clear', label: 'Owner reporting and decision records' },
+  { value: 'Vetted', label: 'Contractor and tenant coordination' },
+  { value: 'Aware', label: 'Compliance reminders and documentation' },
+  { value: 'Measured', label: 'Maintenance triage before unnecessary spend' },
 ];
 
 export function PropertyManagement() {
@@ -52,10 +52,10 @@ export function PropertyManagement() {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {stats.map((stat) => (
+              {managementPrinciples.map((stat) => (
                 <Card key={stat.label} className="rounded-sm border-none p-5" style={{ backgroundColor: '#F7F4ED' }}>
                   <div
-                    className="text-3xl mb-2"
+                    className="text-2xl mb-2"
                     style={{ fontFamily: "'Playfair Display', serif", color: '#17233B', fontWeight: 700 }}
                   >
                     {stat.value}

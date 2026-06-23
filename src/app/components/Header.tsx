@@ -17,7 +17,7 @@ export function Header() {
 
   const navItems = [
     { label: 'Advisory', href: '#advisory' },
-    { label: 'Opportunities', href: '#opportunities' },
+    { label: 'Process', href: '#process' },
     { label: 'Investors', href: '#investment' },
     { label: 'Landlords', href: '#management' },
     { label: 'About', href: '#about' },

@@ -55,22 +55,22 @@ export function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input id="firstName" placeholder="Your first name" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last name</Label>
-                    <Input id="lastName" placeholder="Smith" />
+                    <Input id="lastName" placeholder="Your last name" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email address</Label>
-                    <Input id="email" type="email" placeholder="john.smith@example.com" />
+                    <Input id="email" type="email" placeholder="you@example.com" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone number</Label>
-                    <Input id="phone" type="tel" placeholder="+44 20 1234 5678" />
+                    <Input id="phone" type="tel" placeholder="Your preferred number" />
                   </div>
                 </div>
 

@@ -9,28 +9,28 @@ const investments = [
     title: 'Prime Residential',
     description: 'Core London homes assessed for scarcity, buyer depth, refurbishment potential, and long-term liquidity.',
     metric: 'Capital preservation',
-    ticket: 'GBP 750k+',
+    review: 'Scarcity and resale depth',
   },
   {
     icon: KeyRound,
     title: 'Buy-to-Let',
     description: 'Income-led acquisitions with rent evidence, local demand checks, compliance review, and management planning.',
     metric: 'Income strategy',
-    ticket: 'GBP 350k+',
+    review: 'Rent evidence and running costs',
   },
   {
     icon: Building,
     title: 'Commercial Assets',
-    description: 'Office, retail, and mixed-use opportunities reviewed around tenant covenant, lease structure, and capex exposure.',
+    description: 'Office, retail, and mixed-use briefs reviewed around tenant covenant, lease structure, and capex exposure.',
     metric: 'Lease analysis',
-    ticket: 'GBP 1m+',
+    review: 'Covenant and lease structure',
   },
   {
     icon: Rocket,
     title: 'Development & Off-Plan',
-    description: 'Selective early-stage opportunities where delivery risk, payment schedule, location fundamentals, and exit route are clear.',
+    description: 'Selective early-stage briefs where delivery risk, payment schedule, location fundamentals, and exit route are clear.',
     metric: 'Risk review',
-    ticket: 'GBP 250k+',
+    review: 'Delivery and exit assumptions',
   },
 ];
 
@@ -106,9 +106,9 @@ export function InvestmentOpportunities() {
                       </span>
                     </div>
                     <div className="flex justify-between gap-4">
-                      <span style={{ color: 'rgba(247, 244, 237, 0.62)' }}>Typical brief</span>
+                      <span style={{ color: 'rgba(247, 244, 237, 0.62)' }}>Review</span>
                       <span className="text-right font-semibold" style={{ color: '#C7A463' }}>
-                        {investment.ticket}
+                        {investment.review}
                       </span>
                     </div>
                   </div>
@@ -130,8 +130,9 @@ export function InvestmentOpportunities() {
         </div>
 
         <p className="mt-8 text-xs leading-relaxed max-w-3xl" style={{ color: 'rgba(247, 244, 237, 0.55)' }}>
-          Figures and entry levels are indicative examples only. Property investments can rise or fall in value,
-          and suitability depends on individual circumstances, tax position, finance terms, and holding period.
+          ExComS does not provide financial advice or publish investment products on this website.
+          Property investments can rise or fall in value, and suitability depends on individual circumstances,
+          tax position, finance terms, and holding period.
         </p>
       </div>
     </section>

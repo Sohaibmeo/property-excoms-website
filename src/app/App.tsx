@@ -1,11 +1,11 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ServicesOverview } from './components/ServicesOverview';
-import { FeaturedOpportunities } from './components/FeaturedOpportunities';
+import { AdvisoryProcess } from './components/AdvisoryProcess';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { InvestmentOpportunities } from './components/InvestmentOpportunities';
 import { PropertyManagement } from './components/PropertyManagement';
-import { Testimonials } from './components/Testimonials';
+import { AdvisoryStandards } from './components/AdvisoryStandards';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -17,11 +17,11 @@ export default function App() {
       <main>
         <Hero />
         <ServicesOverview />
-        <FeaturedOpportunities />
+        <AdvisoryProcess />
         <WhyChooseUs />
         <InvestmentOpportunities />
         <PropertyManagement />
-        <Testimonials />
+        <AdvisoryStandards />
         <About />
         <Contact />
       </main>

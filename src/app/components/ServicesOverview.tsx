@@ -9,14 +9,14 @@ const services = [
     title: 'Acquisition Advisory',
     description: 'Search briefs, valuation checks, negotiation strategy, and due diligence for prime residential and commercial purchases.',
     color: '#3D6658',
-    href: '#opportunities',
+    href: '#process',
   },
   {
     icon: Key,
     title: 'Premium Lettings',
     description: 'High-quality rental search, shortlisting, viewing support, and tenancy guidance for executives, families, and relocations.',
     color: '#C7A463',
-    href: '#opportunities',
+    href: '#process',
   },
   {
     icon: Building2,
@@ -28,7 +28,7 @@ const services = [
   {
     icon: TrendingUp,
     title: 'Investor Sourcing',
-    description: 'Off-market and selectively marketed opportunities assessed for yield, risk, exit route, and portfolio fit.',
+    description: 'Discreet investment routes assessed for yield, risk, exit route, and portfolio fit.',
     color: '#C7A463',
     href: '#investment',
   },
@@ -49,7 +49,7 @@ export function ServicesOverview() {
           <h2
             className="section-title mb-4"
           >
-            Property decisions deserve more than listings.
+            Property decisions deserve more than a search.
           </h2>
           <p className="section-copy">
             We work from a clear brief, test assumptions against the market, and stay close through the decisions that affect value, risk, and long-term fit.
