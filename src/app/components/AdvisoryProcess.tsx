@@ -1,26 +1,21 @@
-import { Card } from './ui/card';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, ClipboardCheck, SearchCheck, Scale, Handshake } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from './ui/button';
 
 const process = [
   {
-    icon: ClipboardCheck,
     title: 'Private brief',
     description: 'We establish objectives, timing, budget parameters, preferred structure, and any confidentiality requirements before making recommendations.',
   },
   {
-    icon: SearchCheck,
     title: 'Market intelligence',
     description: 'We review comparable evidence, location fundamentals, rental context, building risk, and the wider commercial picture.',
   },
   {
-    icon: Scale,
     title: 'Decision support',
     description: 'You receive a clear view of trade-offs, negotiation points, risk factors, and whether the brief should proceed, pause, or change direction.',
   },
   {
-    icon: Handshake,
     title: 'Execution and stewardship',
     description: 'We stay close through negotiation, handover, letting, or management so the strategy remains coherent after the initial decision.',
   },
@@ -90,7 +85,7 @@ export function AdvisoryProcess() {
           </div>
 
           <div className="grid gap-6">
-            <Card className="rounded-sm border-none p-7 flex flex-col justify-between" style={{ backgroundColor: '#17233B' }}>
+            <div className="rounded-sm border-none p-7 flex flex-col justify-between" style={{ backgroundColor: '#17233B' }}>
               <div>
                 <p className="section-kicker mb-4">What We Filter For</p>
                 <div className="space-y-4">
@@ -107,7 +102,7 @@ export function AdvisoryProcess() {
               <p className="mt-8 text-sm leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.62)' }}>
                 Each brief is considered for suitability, confidentiality, commercial sense, and long-term fit.
               </p>
-            </Card>
+            </div>
 
             <div className="relative min-h-[220px] overflow-hidden rounded-sm shadow-xl">
               <img
@@ -123,49 +118,32 @@ export function AdvisoryProcess() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {process.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
+        <div className="border-y border-[#17233B]/12">
+          {process.map((step, index) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              className="grid gap-5 md:grid-cols-[90px_0.8fr_1.2fr] py-7 border-b border-[#17233B]/10 last:border-b-0"
+            >
+              <span className="section-kicker">0{index + 1}</span>
+              <h3
+                className="text-2xl"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  color: '#17233B',
+                  fontWeight: 600,
+                }}
               >
-                <Card className="premium-card h-full p-7 rounded-sm">
-                  <div className="flex items-center justify-between mb-7">
-                    <div
-                      className="w-12 h-12 rounded-sm flex items-center justify-center"
-                      style={{ backgroundColor: index % 2 === 0 ? '#17233B' : '#3D6658' }}
-                    >
-                      <Icon size={24} style={{ color: index % 2 === 0 ? '#C7A463' : '#F7F4ED' }} />
-                    </div>
-                    <span
-                      className="text-sm font-semibold"
-                      style={{ color: 'rgba(23, 35, 59, 0.35)' }}
-                    >
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <h3
-                    className="text-2xl mb-3"
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      color: '#17233B',
-                      fontWeight: 600,
-                    }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(36, 39, 44, 0.76)' }}>
-                    {step.description}
-                  </p>
-                </Card>
-              </motion.div>
-            );
-          })}
+                {step.title}
+              </h3>
+              <p className="leading-relaxed" style={{ color: 'rgba(36, 39, 44, 0.76)' }}>
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         <div className="mt-10">

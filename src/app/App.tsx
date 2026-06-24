@@ -1,31 +1,30 @@
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { ServicesOverview } from './components/ServicesOverview';
-import { AdvisoryProcess } from './components/AdvisoryProcess';
-import { WhyChooseUs } from './components/WhyChooseUs';
-import { InvestmentOpportunities } from './components/InvestmentOpportunities';
-import { PropertyManagement } from './components/PropertyManagement';
-import { AdvisoryStandards } from './components/AdvisoryStandards';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router';
+import { useEffect } from 'react';
+import { VersionSwitcher } from './components/VersionSwitcher';
+import { V1Page } from './pages/V1Page';
+import { V2Page } from './pages/V2Page';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <ServicesOverview />
-        <AdvisoryProcess />
-        <WhyChooseUs />
-        <InvestmentOpportunities />
-        <PropertyManagement />
-        <AdvisoryStandards />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Navigate to="/v2" replace />} />
+        <Route path="/v1" element={<V1Page />} />
+        <Route path="/v2" element={<V2Page />} />
+        <Route path="*" element={<Navigate to="/v2" replace />} />
+      </Routes>
+      <VersionSwitcher />
+    </BrowserRouter>
   );
 }

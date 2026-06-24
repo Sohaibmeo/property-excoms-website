@@ -1,4 +1,3 @@
-import { Card } from './ui/card';
 import { motion } from 'motion/react';
 import { FileSearch, LockKeyhole, MessageSquareText } from 'lucide-react';
 
@@ -25,56 +24,65 @@ export function AdvisoryStandards() {
     <section className="py-20 lg:py-24" style={{ backgroundColor: '#F7F4ED' }}>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-14"
+          className="rounded-sm overflow-hidden shadow-2xl"
+          style={{ backgroundColor: '#17233B' }}
         >
-          <p className="section-kicker mb-3">Advisory Standards</p>
-          <h2 className="section-title mb-4">Credibility without theatre.</h2>
-          <p className="section-copy">
-            Premium clients do not need exaggerated claims. They need thoughtful analysis, privacy,
-            and a calm advisor who can separate attractive presentation from sound decision-making.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {standards.map((standard, index) => {
-            const Icon = standard.icon;
-            return (
-              <motion.div
-                key={standard.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="p-7 md:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-[#F7F4ED]/12">
+              <p className="section-kicker mb-3">Advisory Standards</p>
+              <h2
+                className="text-3xl md:text-5xl leading-tight mb-5"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  color: '#F7F4ED',
+                  fontWeight: 700,
+                }}
               >
-                <Card className="premium-card p-8 h-full rounded-sm">
+                Credibility without theatre.
+              </h2>
+              <p className="leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
+                Premium clients do not need exaggerated claims. They need thoughtful analysis, privacy,
+                and a calm advisor who can separate attractive presentation from sound decision-making.
+              </p>
+            </div>
+
+            <div>
+              {standards.map((standard, index) => {
+                const Icon = standard.icon;
+                return (
                   <div
-                    className="w-12 h-12 rounded-sm flex items-center justify-center mb-6"
-                    style={{ backgroundColor: '#17233B' }}
+                    key={standard.title}
+                    className="grid gap-5 md:grid-cols-[56px_0.8fr_1.2fr] p-7 md:p-8 border-b border-[#F7F4ED]/12 last:border-b-0"
                   >
-                    <Icon size={23} style={{ color: '#C7A463' }} />
+                    <div
+                      className="w-12 h-12 rounded-sm flex items-center justify-center"
+                      style={{ backgroundColor: index === 1 ? '#3D6658' : '#C7A463' }}
+                    >
+                      <Icon size={23} style={{ color: index === 1 ? '#F7F4ED' : '#17233B' }} />
+                    </div>
+                    <h3
+                      className="text-2xl"
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        color: '#F7F4ED',
+                        fontWeight: 600,
+                      }}
+                    >
+                      {standard.title}
+                    </h3>
+                    <p className="leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.76)' }}>
+                      {standard.description}
+                    </p>
                   </div>
-                  <h3
-                    className="text-2xl mb-3"
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      color: '#17233B',
-                      fontWeight: 600,
-                    }}
-                  >
-                    {standard.title}
-                  </h3>
-                  <p className="leading-relaxed text-sm" style={{ color: 'rgba(36, 39, 44, 0.76)' }}>
-                    {standard.description}
-                  </p>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -9,28 +9,24 @@ const services = [
     title: 'Acquisition Advisory',
     description: 'Search briefs, valuation checks, negotiation strategy, and due diligence for prime residential and commercial purchases.',
     color: '#3D6658',
-    href: '#process',
   },
   {
     icon: Key,
     title: 'Premium Lettings',
     description: 'High-quality rental search, shortlisting, viewing support, and tenancy guidance for executives, families, and relocations.',
     color: '#C7A463',
-    href: '#process',
   },
   {
     icon: Building2,
     title: 'Managed Assets',
     description: 'A calmer landlord experience with tenant care, compliance oversight, maintenance coordination, and reporting.',
     color: '#17233B',
-    href: '#management',
   },
   {
     icon: TrendingUp,
     title: 'Investor Sourcing',
     description: 'Discreet investment routes assessed for yield, risk, exit route, and portfolio fit.',
     color: '#C7A463',
-    href: '#investment',
   },
 ];
 
@@ -84,25 +80,36 @@ export function ServicesOverview() {
                   >
                     {service.title}
                   </h3>
-                  <p className="mb-7 leading-relaxed text-sm" style={{ color: 'rgba(36, 39, 44, 0.78)' }}>
+                  <p className="leading-relaxed text-sm" style={{ color: 'rgba(36, 39, 44, 0.78)' }}>
                     {service.description}
                   </p>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="group/btn p-0 h-auto hover:bg-transparent"
-                    style={{ color: service.color }}
-                  >
-                    <a href={service.href}>
-                      Explore path
-                      <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
-                    </a>
-                  </Button>
                 </Card>
               </motion.div>
             );
           })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-10 flex flex-col sm:flex-row sm:items-center gap-5"
+        >
+          <Button
+            asChild
+            className="rounded-sm bg-[#17233B] text-[#F7F4ED] hover:bg-[#C7A463] hover:text-[#17233B]"
+          >
+            <a href="#contact">
+              Start a private brief
+              <ArrowRight className="ml-2" size={16} />
+            </a>
+          </Button>
+          <p className="text-sm leading-relaxed max-w-xl" style={{ color: 'rgba(36, 39, 44, 0.68)' }}>
+            Your brief may focus on one advisory area or combine acquisition, letting,
+            management, and investment considerations.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
