@@ -24,6 +24,9 @@ import {
   Wallet,
   Wrench,
 } from 'lucide-react';
+import sarahPortrait from '../../assets/testimonials/sarah-mitchell.png';
+import jamesPortrait from '../../assets/testimonials/james-richardson.png';
+import priyaPortrait from '../../assets/testimonials/priya-sharma.png';
 
 const services = [
   {
@@ -658,16 +661,22 @@ const v1Testimonials = [
   {
     name: 'Sarah Mitchell',
     role: 'Property Investor',
+    image: sarahPortrait,
+    imagePosition: 'center 24%',
     content: 'ExComS Property helped us build a GBP 3M portfolio over 5 years. Their investment insights and market knowledge are second to none.',
   },
   {
     name: 'James Richardson',
     role: 'First-Time Buyer',
+    image: jamesPortrait,
+    imagePosition: 'center 22%',
     content: 'The team guided me every step of the way, found the right property, and negotiated a strong result.',
   },
   {
     name: 'Priya Sharma',
     role: 'Landlord',
+    image: priyaPortrait,
+    imagePosition: 'center 20%',
     content: 'Their management service is seamless. Rent collection, maintenance, and updates are all handled professionally.',
   },
 ];
@@ -681,65 +690,79 @@ export function V1StatsAndTestimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start"
+          className="mb-12"
         >
-          <div>
-            <p className="section-kicker mb-3">Proof Points</p>
-            <h2 className="section-title mb-5">Numbers and client stories.</h2>
-            <p className="section-copy">
-              V1 keeps the earlier proof-heavy approach with stronger statistics and named success stories.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
+          <p className="section-kicker mb-3">Proof Points</p>
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 items-end">
+            <div>
+              <h2 className="section-title mb-5">Numbers and client stories.</h2>
+              <p className="section-copy">
+                V1 keeps the earlier proof-heavy approach with stronger statistics and named success stories.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 rounded-sm overflow-hidden border border-[#17233B]/10">
               {v1Stats.map((stat) => (
-                <Card key={stat.label} className="rounded-sm border-none p-5" style={{ backgroundColor: '#F7F4ED' }}>
+                <div key={stat.label} className="p-5 border-r border-b lg:border-b-0 border-[#17233B]/10 last:border-r-0 odd:last:border-r" style={{ backgroundColor: '#F7F4ED' }}>
                   <div
-                    className="text-3xl mb-2"
+                    className="text-2xl md:text-3xl mb-2"
                     style={{ fontFamily: "'Playfair Display', serif", color: '#17233B', fontWeight: 700 }}
                   >
                     {stat.value}
                   </div>
-                  <p className="text-sm leading-snug" style={{ color: 'rgba(36, 39, 44, 0.72)' }}>
+                  <p className="text-xs md:text-sm leading-snug" style={{ color: 'rgba(36, 39, 44, 0.72)' }}>
                     {stat.label}
                   </p>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
+        </motion.div>
 
-          <div className="grid gap-5">
-            {v1Testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-              >
-                <Card className="premium-card rounded-sm p-6">
-                  <div className="flex gap-1 mb-4">
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <Star key={starIndex} size={15} fill="#C7A463" color="#C7A463" />
-                    ))}
+        <div className="grid md:grid-cols-3 gap-6">
+          {v1Testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+            >
+              <Card className="premium-card rounded-sm overflow-hidden h-full">
+                <div className="h-72 md:h-80 overflow-hidden">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="h-full w-full object-cover grayscale-[8%]"
+                    style={{ objectPosition: testimonial.imagePosition }}
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between gap-4 mb-5">
+                    <div>
+                      <h3
+                        className="text-xl"
+                        style={{ fontFamily: "'Playfair Display', serif", color: '#17233B', fontWeight: 600 }}
+                      >
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-sm" style={{ color: 'rgba(36, 39, 44, 0.68)' }}>
+                        {testimonial.role}
+                      </p>
+                    </div>
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star key={starIndex} size={14} fill="#C7A463" color="#C7A463" />
+                      ))}
+                    </div>
                   </div>
-                  <p className="leading-relaxed mb-5" style={{ color: '#24272C' }}>
+                  <p className="leading-relaxed" style={{ color: '#24272C' }}>
                     "{testimonial.content}"
                   </p>
-                  <div className="border-t border-[#17233B]/10 pt-4">
-                    <h3
-                      className="text-lg"
-                      style={{ fontFamily: "'Playfair Display', serif", color: '#17233B', fontWeight: 600 }}
-                    >
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-sm" style={{ color: 'rgba(36, 39, 44, 0.68)' }}>
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
