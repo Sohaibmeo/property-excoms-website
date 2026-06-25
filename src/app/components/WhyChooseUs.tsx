@@ -1,26 +1,26 @@
 import { motion } from 'motion/react';
-import { Award, Shield, TrendingUp, Users } from 'lucide-react';
+import { ClipboardList, Home, Key, Users } from 'lucide-react';
 
 const features = [
   {
-    icon: Award,
-    title: 'Selective market access',
-    description: 'We focus on better-qualified routes, including discreet conversations and landlord-led instructions that rarely suit a mass-market search.',
+    icon: Home,
+    title: 'Property-focused help',
+    description: 'We support common property needs including buying, selling, renting, lettings, and landlord management.',
   },
   {
-    icon: Shield,
-    title: 'Advice before volume',
-    description: 'Every recommendation is tested against your brief, timing, risk tolerance, holding plan, and exit route.',
+    icon: ClipboardList,
+    title: 'Clear next steps',
+    description: 'We explain what needs to happen next so the process feels organised from enquiry to handover.',
   },
   {
-    icon: TrendingUp,
-    title: 'Commercial discipline',
-    description: 'Investor work includes rent evidence, yield context, capex pressure, liquidity, and the practical levers that affect performance.',
+    icon: Key,
+    title: 'Viewing and move support',
+    description: 'We help with shortlists, viewings, questions, offers, tenancy steps, and practical handover details.',
   },
   {
     icon: Users,
-    title: 'Senior-led service',
-    description: 'You work with a consistent advisory contact from brief to completion, handover, or ongoing management.',
+    title: 'Consistent communication',
+    description: 'You work with a responsive contact who keeps you updated and makes the process easier to follow.',
   },
 ];
 
@@ -37,11 +37,10 @@ export function WhyChooseUs() {
         >
           <div>
             <p className="section-kicker mb-3">Why ExComS</p>
-            <h2 className="section-title mb-5">A consultancy posture, not a sales posture.</h2>
+            <h2 className="section-title mb-5">Property support without overcomplication.</h2>
             <div className="gold-divider mb-6" />
             <p className="section-copy">
-              Premium clients need clarity, confidentiality, and commercial judgement. ExComS brings structure
-              to complex property decisions, helping you move with confidence rather than volume-led pressure.
+              ExComS gives clients clear, practical help with everyday property decisions, without making the service sound more complicated than it needs to be.
             </p>
           </div>
 

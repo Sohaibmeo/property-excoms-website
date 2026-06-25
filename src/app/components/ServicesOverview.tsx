@@ -1,31 +1,31 @@
 import { Card } from './ui/card';
 import { motion } from 'motion/react';
-import { Home, Key, Building2, TrendingUp, ArrowRight } from 'lucide-react';
+import { Home, Key, Building2, Tag, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const services = [
   {
     icon: Home,
-    title: 'Acquisition Advisory',
-    description: 'Search briefs, valuation checks, negotiation strategy, and due diligence for prime residential and commercial purchases.',
+    title: 'Buy a Property',
+    description: 'Search support, shortlisting, viewing guidance, and offer help for people looking for the right home or property.',
     color: '#3D6658',
   },
   {
     icon: Key,
-    title: 'Premium Lettings',
-    description: 'High-quality rental search, shortlisting, viewing support, and tenancy guidance for executives, families, and relocations.',
+    title: 'Rent a Property',
+    description: 'Rental search, viewing support, and simple guidance for tenants, families, and people relocating.',
     color: '#C7A463',
   },
   {
     icon: Building2,
-    title: 'Managed Assets',
-    description: 'A calmer landlord experience with tenant care, compliance oversight, maintenance coordination, and reporting.',
+    title: 'Landlord Support',
+    description: 'Tenant communication, rent tracking, maintenance coordination, and regular updates for landlords.',
     color: '#17233B',
   },
   {
-    icon: TrendingUp,
-    title: 'Investor Sourcing',
-    description: 'Discreet investment routes assessed for yield, risk, exit route, and portfolio fit.',
+    icon: Tag,
+    title: 'Sell a Property',
+    description: 'Pricing guidance, marketing preparation, viewing coordination, and offer support for sellers.',
     color: '#C7A463',
   },
 ];
@@ -41,14 +41,14 @@ export function ServicesOverview() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-14"
         >
-          <p className="section-kicker mb-3">How We Advise</p>
+          <p className="section-kicker mb-3">What We Do</p>
           <h2
             className="section-title mb-4"
           >
-            Property decisions deserve more than a search.
+            Straightforward help for everyday property needs.
           </h2>
           <p className="section-copy">
-            We work from a clear brief, test assumptions against the market, and stay close through the decisions that affect value, risk, and long-term fit.
+            Whether you want to buy, sell, rent, let, or manage a property, we keep the process clear and practical from the first conversation.
           </p>
         </motion.div>
 
@@ -101,13 +101,12 @@ export function ServicesOverview() {
             className="rounded-sm bg-[#17233B] text-[#F7F4ED] hover:bg-[#C7A463] hover:text-[#17233B]"
           >
             <a href="#contact">
-              Start a private brief
+              Start your enquiry
               <ArrowRight className="ml-2" size={16} />
             </a>
           </Button>
           <p className="text-sm leading-relaxed max-w-xl" style={{ color: 'rgba(36, 39, 44, 0.68)' }}>
-            Your brief may focus on one advisory area or combine acquisition, letting,
-            management, and investment considerations.
+            Tell us what you need and we will guide you toward the right next step.
           </p>
         </motion.div>
       </div>

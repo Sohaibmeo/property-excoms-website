@@ -1,31 +1,31 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Building, Home, KeyRound, Rocket } from 'lucide-react';
+import { ArrowRight, Building, Home, KeyRound, Megaphone } from 'lucide-react';
 import { Button } from './ui/button';
 
-const investments = [
+const sellingServices = [
   {
     icon: Home,
-    title: 'Prime Residential',
-    description: 'Scarcity, buyer depth, refurbishment potential, and long-term liquidity.',
-    metric: 'Capital preservation',
+    title: 'Selling Preparation',
+    description: 'Practical guidance on presentation, pricing expectations, photos, and listing readiness.',
+    metric: 'Prepare',
   },
   {
     icon: KeyRound,
-    title: 'Buy-to-Let',
-    description: 'Rent evidence, local demand, compliance exposure, and running costs.',
-    metric: 'Income strategy',
+    title: 'Letting Support',
+    description: 'Help with finding tenants, arranging viewings, and keeping the rental process organised.',
+    metric: 'Let',
   },
   {
     icon: Building,
-    title: 'Commercial Assets',
-    description: 'Tenant covenant, lease structure, capex exposure, and exit assumptions.',
-    metric: 'Lease analysis',
+    title: 'Property Marketing',
+    description: 'Support with clear property details, enquiry handling, and viewing coordination.',
+    metric: 'Market',
   },
   {
-    icon: Rocket,
-    title: 'Development & Off-Plan',
-    description: 'Delivery risk, payment schedule, location fundamentals, and liquidity.',
-    metric: 'Risk review',
+    icon: Megaphone,
+    title: 'Offer Follow-Up',
+    description: 'Simple support around buyer or tenant questions, offers, and next steps.',
+    metric: 'Agree',
   },
 ];
 
@@ -43,7 +43,7 @@ export function InvestmentOpportunities() {
             transition={{ duration: 0.6 }}
             className="lg:sticky lg:top-28"
           >
-            <p className="section-kicker mb-3">Investor Advisory</p>
+            <p className="section-kicker mb-3">Selling and Letting</p>
             <h2
               className="text-3xl md:text-5xl leading-tight mb-5"
               style={{
@@ -52,18 +52,17 @@ export function InvestmentOpportunities() {
                 fontWeight: 700,
               }}
             >
-              Investment work with the risk still visible.
+              Support when you want to sell or let your property.
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
-              We avoid dressing every route as a win. ExComS frames the upside, constraints,
-              management realities, and the questions worth answering before capital is committed.
+              From preparing a listing to arranging viewings and following up enquiries, we help keep the process organised and easy to understand.
             </p>
             <Button
               asChild
               className="rounded-sm bg-[#C7A463] text-[#17233B] hover:bg-[#F7F4ED]"
             >
               <a href="#contact">
-                Discuss strategy
+                Discuss your property
                 <ArrowRight className="ml-2" size={16} />
               </a>
             </Button>
@@ -76,7 +75,7 @@ export function InvestmentOpportunities() {
             transition={{ duration: 0.6 }}
             className="border-y border-[#F7F4ED]/15"
           >
-            {investments.map((investment, index) => {
+            {sellingServices.map((investment, index) => {
               const Icon = investment.icon;
               return (
                 <div
@@ -114,9 +113,7 @@ export function InvestmentOpportunities() {
         </div>
 
         <p className="mt-8 text-xs leading-relaxed max-w-3xl" style={{ color: 'rgba(247, 244, 237, 0.55)' }}>
-          ExComS does not provide financial advice or publish investment products on this website.
-          Property investments can rise or fall in value, and suitability depends on individual circumstances,
-          tax position, finance terms, and holding period.
+          ExComS provides property support and introductions where appropriate. Specialist legal, mortgage, tax, or survey advice should be taken from qualified professionals.
         </p>
       </div>
     </section>

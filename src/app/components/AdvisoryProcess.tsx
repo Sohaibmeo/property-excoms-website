@@ -4,27 +4,27 @@ import { Button } from './ui/button';
 
 const process = [
   {
-    title: 'Private brief',
-    description: 'We establish objectives, timing, budget parameters, preferred structure, and any confidentiality requirements before making recommendations.',
+    title: 'Tell us what you need',
+    description: 'We confirm whether you want to buy, sell, rent, let, or manage a property, along with your area, timing, and budget.',
   },
   {
-    title: 'Market intelligence',
-    description: 'We review comparable evidence, location fundamentals, rental context, building risk, and the wider commercial picture.',
+    title: 'Property search or review',
+    description: 'We help shortlist suitable options, prepare a property for sale or rent, or review what support your landlord setup needs.',
   },
   {
-    title: 'Decision support',
-    description: 'You receive a clear view of trade-offs, negotiation points, risk factors, and whether the brief should proceed, pause, or change direction.',
+    title: 'Viewings and offers',
+    description: 'We help coordinate viewings, answer practical questions, and support simple offer or tenancy discussions.',
   },
   {
-    title: 'Execution and stewardship',
-    description: 'We stay close through negotiation, handover, letting, or management so the strategy remains coherent after the initial decision.',
+    title: 'Move-in, completion, or management',
+    description: 'We stay available through the handover stage and can continue helping with lettings or property management.',
   },
 ];
 
 const advisorySignals = [
-  'Prime homes and private client briefs',
-  'Rental and management implications reviewed early',
-  'Investment routes assessed before introductions are made',
+  'Buying, selling, renting, and lettings',
+  'Viewing and offer support',
+  'Landlord updates and maintenance coordination',
 ];
 
 export function AdvisoryProcess() {
@@ -40,10 +40,9 @@ export function AdvisoryProcess() {
         >
           <div className="max-w-3xl">
             <p className="section-kicker mb-3">How We Work</p>
-            <h2 className="section-title mb-4">Advisory before access.</h2>
+            <h2 className="section-title mb-4">A clear process from enquiry to next step.</h2>
             <p className="section-copy">
-              ExComS works from a private brief, filters the market with discretion, and only progresses
-              routes that stand up commercially.
+              ExComS keeps property work simple: understand the need, find the right route, and help you move forward with confidence.
             </p>
           </div>
           <Button
@@ -51,7 +50,7 @@ export function AdvisoryProcess() {
             variant="outline"
             className="rounded-sm border-[#17233B]/25 bg-white text-[#17233B] hover:bg-[#17233B] hover:text-[#F7F4ED] hover:border-[#17233B] lg:mb-2"
           >
-            <a href="#contact">Start a confidential brief</a>
+            <a href="#contact">Start an enquiry</a>
           </Button>
         </motion.div>
 
@@ -70,7 +69,7 @@ export function AdvisoryProcess() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#17233B]/80 via-[#17233B]/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <p className="section-kicker mb-3">Private Market Lens</p>
+              <p className="section-kicker mb-3">Property Support</p>
               <h3
                 className="text-3xl md:text-5xl leading-tight max-w-2xl"
                 style={{
@@ -79,7 +78,7 @@ export function AdvisoryProcess() {
                   fontWeight: 700,
                 }}
               >
-                Beautiful property is only the beginning of the assessment.
+                Good guidance makes the property process feel simpler.
               </h3>
             </div>
           </div>
@@ -87,7 +86,7 @@ export function AdvisoryProcess() {
           <div className="grid gap-6">
             <div className="rounded-sm border-none p-7 flex flex-col justify-between" style={{ backgroundColor: '#17233B' }}>
               <div>
-                <p className="section-kicker mb-4">What We Filter For</p>
+                <p className="section-kicker mb-4">What We Help With</p>
                 <div className="space-y-4">
                   {advisorySignals.map((signal) => (
                     <div key={signal} className="flex gap-3">
@@ -100,7 +99,7 @@ export function AdvisoryProcess() {
                 </div>
               </div>
               <p className="mt-8 text-sm leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.62)' }}>
-                Each brief is considered for suitability, confidentiality, commercial sense, and long-term fit.
+                Every enquiry is handled with clear communication and practical next steps.
               </p>
             </div>
 
@@ -112,7 +111,7 @@ export function AdvisoryProcess() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#17233B]/65 to-transparent" />
               <p className="absolute bottom-5 left-5 right-5 text-sm font-medium" style={{ color: '#F7F4ED' }}>
-                Condition, specification, light, outlook, and building quality are considered alongside price.
+                We help you look at location, condition, space, price, and practical fit.
               </p>
             </div>
           </div>
@@ -152,7 +151,7 @@ export function AdvisoryProcess() {
             className="rounded-sm bg-[#17233B] text-[#F7F4ED] hover:bg-[#C7A463] hover:text-[#17233B]"
           >
             <a href="#contact">
-              Discuss your brief
+              Discuss your property needs
               <ArrowRight className="ml-2" size={16} />
             </a>
           </Button>

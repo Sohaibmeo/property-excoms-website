@@ -26,8 +26,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mb-6 leading-relaxed max-w-sm" style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
-              Senior-led property consultancy for acquisition, lettings, landlord management,
-              and private investment briefs.
+              Practical property support for buying, selling, renting, lettings, and landlord management.
             </p>
           </div>
 
@@ -44,9 +43,9 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { label: 'Advisory', href: '#advisory' },
+                { label: 'Services', href: '#advisory' },
                 { label: 'Process', href: '#process' },
-                { label: 'Investors', href: '#investment' },
+                { label: 'Selling', href: '#investment' },
                 { label: 'Landlords', href: '#management' },
                 { label: 'About', href: '#about' },
               ].map((link) => (
@@ -76,11 +75,11 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                'Acquisition advisory',
-                'Premium rental search',
+                'Buy a property',
+                'Sell a property',
+                'Find a rental',
                 'Landlord management',
-                'Investment sourcing',
-                'Portfolio review',
+                'General property help',
               ].map((service) => (
                 <li key={service} style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
                   {service}
@@ -104,8 +103,8 @@ export function Footer() {
               <li className="flex gap-3">
                 <MapPin size={20} className="flex-shrink-0" style={{ color: '#C7A463' }} />
                 <span style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
-                  London and wider UK briefs<br />
-                  By private appointment
+                  London and wider UK enquiries<br />
+                  Appointments available
                 </span>
               </li>
               <li className="flex gap-3">
@@ -130,7 +129,7 @@ export function Footer() {
               Copyright {currentYear} ExComS Property. All rights reserved.
             </p>
             <p className="text-sm" style={{ color: 'rgba(247, 244, 237, 0.62)' }}>
-              Private consultations by appointment.
+              Property consultations by appointment.
             </p>
           </div>
         </div>

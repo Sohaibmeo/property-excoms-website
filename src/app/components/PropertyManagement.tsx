@@ -8,24 +8,24 @@ const services = [
     description: 'Referencing, onboarding, communication, and renewal planning designed to protect income.',
   },
   {
-    title: 'Financial visibility',
-    description: 'Rent tracking, arrears escalation, owner statements, and practical reporting for decisions.',
+    title: 'Rent updates',
+    description: 'Rent tracking, owner updates, and practical reporting so landlords know what is happening.',
   },
   {
     title: 'Maintenance control',
     description: 'Vetted contractor coordination, issue triage, quote review, and clear owner updates.',
   },
   {
-    title: 'Compliance oversight',
-    description: 'Safety certificates, licensing awareness, tenancy documentation, and timely reminders.',
+    title: 'Document reminders',
+    description: 'Helpful reminders around tenancy documents, key dates, and landlord paperwork.',
   },
 ];
 
 const managementPrinciples = [
-  'Clear owner reporting',
+  'Clear owner updates',
   'Vetted coordination',
-  'Compliance awareness',
-  'Measured maintenance spend',
+  'Document reminders',
+  'Maintenance coordination',
 ];
 
 export function PropertyManagement() {
@@ -40,10 +40,9 @@ export function PropertyManagement() {
             transition={{ duration: 0.6 }}
           >
             <p className="section-kicker mb-3">For Landlords</p>
-            <h2 className="section-title mb-5">Management that protects the asset, not just the tenancy.</h2>
+            <h2 className="section-title mb-5">Practical support for landlords and rental properties.</h2>
             <p className="section-copy mb-8">
-              Landlords need operational clarity, accountable communication, compliance awareness, and decisions
-              that preserve rental performance over time.
+              Landlords need clear updates, tenant communication, maintenance coordination, and help keeping the rental process organised.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
@@ -64,7 +63,7 @@ export function PropertyManagement() {
               style={{ backgroundColor: '#17233B', color: '#F7F4ED' }}
             >
               <a href="#contact">
-                Request a management review
+                Request landlord support
                 <ArrowRight className="ml-2" size={16} />
               </a>
             </Button>

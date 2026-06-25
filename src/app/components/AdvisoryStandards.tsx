@@ -1,21 +1,21 @@
 import { motion } from 'motion/react';
-import { FileSearch, LockKeyhole, MessageSquareText } from 'lucide-react';
+import { FileCheck, LockKeyhole, MessageSquareText } from 'lucide-react';
 
 const standards = [
   {
-    icon: FileSearch,
-    title: 'Documented judgement',
-    description: 'Recommendations are supported by comparable evidence, risk notes, and a clear explanation of why a route is suitable.',
+    icon: FileCheck,
+    title: 'Clear information',
+    description: 'We explain the next step plainly, so clients understand what is happening and what is needed from them.',
   },
   {
     icon: LockKeyhole,
-    title: 'Discretion by default',
-    description: 'Private client details, budgets, motivations, and negotiations are treated as sensitive from the first conversation.',
+    title: 'Respectful handling',
+    description: 'Client details, property information, budgets, and conversations are handled carefully from the first enquiry.',
   },
   {
     icon: MessageSquareText,
-    title: 'Plain-English advice',
-    description: 'We avoid sales pressure and explain trade-offs directly, so clients can make decisions without noise or ambiguity.',
+    title: 'Plain-English support',
+    description: 'We keep communication simple and avoid unnecessary jargon, pressure, or overcomplicated promises.',
   },
 ];
 
@@ -33,7 +33,7 @@ export function AdvisoryStandards() {
         >
           <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
             <div className="p-7 md:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-[#F7F4ED]/12">
-              <p className="section-kicker mb-3">Advisory Standards</p>
+              <p className="section-kicker mb-3">Service Standards</p>
               <h2
                 className="text-3xl md:text-5xl leading-tight mb-5"
                 style={{
@@ -42,11 +42,10 @@ export function AdvisoryStandards() {
                   fontWeight: 700,
                 }}
               >
-                Credibility without theatre.
+                Professional support, kept simple.
               </h2>
               <p className="leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
-                Premium clients do not need exaggerated claims. They need thoughtful analysis, privacy,
-                and a calm advisor who can separate attractive presentation from sound decision-making.
+                Clients need clear communication, careful handling, and practical help with the property task in front of them.
               </p>
             </div>
 

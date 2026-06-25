@@ -16,9 +16,9 @@ export function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Advisory', href: '#advisory' },
+    { label: 'Services', href: '#advisory' },
     { label: 'Process', href: '#process' },
-    { label: 'Investors', href: '#investment' },
+    { label: 'Selling', href: '#investment' },
     { label: 'Landlords', href: '#management' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
@@ -74,7 +74,7 @@ export function Header() {
               style={{ backgroundColor: '#C7A463', color: '#17233B' }}
               className="hover:opacity-90 transition-opacity rounded-sm px-5"
             >
-              <a href="#contact">Private Consultation</a>
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
 
@@ -117,7 +117,7 @@ export function Header() {
                 className="w-full mt-4 rounded-sm"
               >
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Private Consultation
+                  Get Started
                 </a>
               </Button>
             </nav>
