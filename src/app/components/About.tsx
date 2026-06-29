@@ -5,13 +5,13 @@ import { Target, ShieldCheck, Lightbulb } from 'lucide-react';
 const principles = [
   {
     icon: Target,
-    title: 'Brief-led',
-    text: 'We clarify goals, constraints, finance position, timing, and non-negotiables before recommending a route.',
+    title: 'Need-led',
+    text: 'We clarify whether you want to buy, sell, rent, let, or manage a property before suggesting the next step.',
   },
   {
     icon: ShieldCheck,
-    title: 'Evidence-led',
-    text: 'Comparable evidence, rental context, building condition, and exit risk shape the advice, not just presentation value.',
+    title: 'Practical',
+    text: 'We focus on location, budget, condition, timing, viewings, offers, and the details that make the process move.',
   },
   {
     icon: Lightbulb,
@@ -35,7 +35,7 @@ export function About() {
             <div className="relative h-[480px] lg:h-[620px] rounded-sm overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMGNvbnN1bHRhbnQlMjBtZWV0aW5nfGVufDF8fHx8MTc4MjIxNTI1MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="ExComS Property advisory meeting"
+                alt="ExComS Property consultation meeting"
                 className="w-full h-full object-cover"
               />
               <div
@@ -65,10 +65,10 @@ export function About() {
                     fontWeight: 700,
                   }}
                 >
-                  25+ Years
+                  Property Help
                 </div>
                 <div className="text-sm" style={{ color: '#17233B', opacity: 0.9 }}>
-                  Combined property advisory experience
+                  Buying, selling, renting, lettings, and landlord support
                 </div>
               </Card>
             </motion.div>
@@ -81,16 +81,15 @@ export function About() {
             transition={{ duration: 0.6 }}
           >
             <p className="section-kicker mb-3">About ExComS Property</p>
-            <h2 className="section-title mb-6">A senior advisory partner for property decisions that matter.</h2>
+            <h2 className="section-title mb-6">A practical property partner for everyday decisions.</h2>
 
             <p className="section-copy mb-6">
-              ExComS Property supports buyers, tenants, landlords, and investors across the UK property market,
-              with a particular focus on premium London and high-value residential, rental, and investment briefs.
+              ExComS Property supports buyers, sellers, tenants, and landlords across the UK property market,
+              with a focus on clear communication and practical support.
             </p>
 
             <p className="section-copy mb-8">
-              Our role is to bring judgement and stewardship to each brief: knowing what to pursue,
-              what to question, when to negotiate, and when to walk away.
+              Our role is to help clients understand their options, arrange the right next steps, and stay organised through the property process.
             </p>
 
             <div className="space-y-5">

@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,28 +26,8 @@ export function Footer() {
               </span>
             </div>
             <p className="mb-6 leading-relaxed max-w-sm" style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
-              Senior-led property consultancy for acquisition, lettings, landlord management,
-              and private investment briefs.
+              Practical property support for buying, selling, renting, lettings, and landlord management.
             </p>
-            <div className="flex gap-3">
-              {[
-                { icon: Instagram, label: 'Instagram' },
-                { icon: Linkedin, label: 'LinkedIn' },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={item.label}
-                    href="#"
-                    aria-label={item.label}
-                    className="w-10 h-10 rounded-sm flex items-center justify-center hover:opacity-80 transition-opacity"
-                    style={{ backgroundColor: '#C7A463' }}
-                  >
-                    <Icon size={18} style={{ color: '#17233B' }} />
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           <div>
@@ -63,9 +43,9 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { label: 'Advisory', href: '#advisory' },
-                { label: 'Opportunities', href: '#opportunities' },
-                { label: 'Investors', href: '#investment' },
+                { label: 'Services', href: '#advisory' },
+                { label: 'Process', href: '#process' },
+                { label: 'Selling', href: '#investment' },
                 { label: 'Landlords', href: '#management' },
                 { label: 'About', href: '#about' },
               ].map((link) => (
@@ -95,11 +75,11 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                'Acquisition advisory',
-                'Premium rental search',
+                'Buy a property',
+                'Sell a property',
+                'Find a rental',
                 'Landlord management',
-                'Investment sourcing',
-                'Portfolio review',
+                'General property help',
               ].map((service) => (
                 <li key={service} style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
                   {service}
@@ -123,8 +103,8 @@ export function Footer() {
               <li className="flex gap-3">
                 <MapPin size={20} className="flex-shrink-0" style={{ color: '#C7A463' }} />
                 <span style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
-                  123 Mayfair Avenue<br />
-                  London, W1K 1AB
+                  London and wider UK enquiries<br />
+                  Appointments available
                 </span>
               </li>
               <li className="flex gap-3">
@@ -148,18 +128,9 @@ export function Footer() {
             <p className="text-sm" style={{ color: 'rgba(247, 244, 237, 0.62)' }}>
               Copyright {currentYear} ExComS Property. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center gap-5 text-sm">
-              {['Privacy Policy', 'Terms of Business', 'Cookie Policy'].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="hover:text-[#C7A463] transition-colors"
-                  style={{ color: 'rgba(247, 244, 237, 0.62)' }}
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
+            <p className="text-sm" style={{ color: 'rgba(247, 244, 237, 0.62)' }}>
+              Property consultations by appointment.
+            </p>
           </div>
         </div>
       </div>

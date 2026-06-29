@@ -1,36 +1,31 @@
-import { Card } from './ui/card';
 import { motion } from 'motion/react';
-import { Home, KeyRound, Building, Rocket, ArrowRight } from 'lucide-react';
+import { ArrowRight, Building, Home, KeyRound, Megaphone } from 'lucide-react';
 import { Button } from './ui/button';
 
-const investments = [
+const sellingServices = [
   {
     icon: Home,
-    title: 'Prime Residential',
-    description: 'Core London homes assessed for scarcity, buyer depth, refurbishment potential, and long-term liquidity.',
-    metric: 'Capital preservation',
-    ticket: 'GBP 750k+',
+    title: 'Selling Preparation',
+    description: 'Practical guidance on presentation, pricing expectations, photos, and listing readiness.',
+    metric: 'Prepare',
   },
   {
     icon: KeyRound,
-    title: 'Buy-to-Let',
-    description: 'Income-led acquisitions with rent evidence, local demand checks, compliance review, and management planning.',
-    metric: 'Income strategy',
-    ticket: 'GBP 350k+',
+    title: 'Letting Support',
+    description: 'Help with finding tenants, arranging viewings, and keeping the rental process organised.',
+    metric: 'Let',
   },
   {
     icon: Building,
-    title: 'Commercial Assets',
-    description: 'Office, retail, and mixed-use opportunities reviewed around tenant covenant, lease structure, and capex exposure.',
-    metric: 'Lease analysis',
-    ticket: 'GBP 1m+',
+    title: 'Property Marketing',
+    description: 'Support with clear property details, enquiry handling, and viewing coordination.',
+    metric: 'Market',
   },
   {
-    icon: Rocket,
-    title: 'Development & Off-Plan',
-    description: 'Selective early-stage opportunities where delivery risk, payment schedule, location fundamentals, and exit route are clear.',
-    metric: 'Risk review',
-    ticket: 'GBP 250k+',
+    icon: Megaphone,
+    title: 'Offer Follow-Up',
+    description: 'Simple support around buyer or tenant questions, offers, and next steps.',
+    metric: 'Agree',
   },
 ];
 
@@ -40,98 +35,85 @@ export function InvestmentOpportunities() {
       <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'linear-gradient(135deg, #C7A463 1px, transparent 1px)', backgroundSize: '42px 42px' }} />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-14"
-        >
-          <p className="section-kicker mb-3">Investor Advisory</p>
-          <h2
-            className="text-3xl md:text-5xl leading-tight mb-5"
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              color: '#F7F4ED',
-              fontWeight: 700,
-            }}
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-20 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:sticky lg:top-28"
           >
-            Investment work with the risk still visible.
-          </h2>
-          <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
-            We avoid dressing every opportunity as a win. ExComS frames the upside, the constraints,
-            the management realities, and the questions worth answering before capital is committed.
-          </p>
-        </motion.div>
+            <p className="section-kicker mb-3">Selling and Letting</p>
+            <h2
+              className="text-3xl md:text-5xl leading-tight mb-5"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                color: '#F7F4ED',
+                fontWeight: 700,
+              }}
+            >
+              Support when you want to sell or let your property.
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
+              From preparing a listing to arranging viewings and following up enquiries, we help keep the process organised and easy to understand.
+            </p>
+            <Button
+              asChild
+              className="rounded-sm bg-[#C7A463] text-[#17233B] hover:bg-[#F7F4ED]"
+            >
+              <a href="#contact">
+                Discuss your property
+                <ArrowRight className="ml-2" size={16} />
+              </a>
+            </Button>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {investments.map((investment, index) => {
-            const Icon = investment.icon;
-            return (
-              <motion.div
-                key={investment.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card
-                  className="p-7 h-full transition-all duration-300 group rounded-sm border"
-                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.06)', borderColor: 'rgba(247, 244, 237, 0.12)' }}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-y border-[#F7F4ED]/15"
+          >
+            {sellingServices.map((investment, index) => {
+              const Icon = investment.icon;
+              return (
+                <div
+                  key={investment.title}
+                  className="grid gap-5 md:grid-cols-[56px_0.75fr_1fr] py-7 border-b border-[#F7F4ED]/12 last:border-b-0"
                 >
                   <div
-                    className="w-14 h-14 rounded-sm flex items-center justify-center mb-6 group-hover:scale-105 transition-transform"
+                    className="w-12 h-12 rounded-sm flex items-center justify-center"
                     style={{ backgroundColor: '#C7A463' }}
                   >
-                    <Icon size={28} style={{ color: '#17233B' }} />
+                    <Icon size={23} style={{ color: '#17233B' }} />
                   </div>
-                  <h3
-                    className="text-2xl mb-4"
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      color: '#F7F4ED',
-                      fontWeight: 600,
-                    }}
-                  >
-                    {investment.title}
-                  </h3>
-                  <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.78)' }}>
+                  <div>
+                    <p className="text-sm font-semibold mb-2" style={{ color: '#C7A463' }}>
+                      {investment.metric}
+                    </p>
+                    <h3
+                      className="text-2xl"
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        color: '#F7F4ED',
+                        fontWeight: 600,
+                      }}
+                    >
+                      {investment.title}
+                    </h3>
+                  </div>
+                  <p className="leading-relaxed" style={{ color: 'rgba(247, 244, 237, 0.76)' }}>
                     {investment.description}
                   </p>
-                  <div className="space-y-3 mb-6 text-sm">
-                    <div className="flex justify-between gap-4">
-                      <span style={{ color: 'rgba(247, 244, 237, 0.62)' }}>Focus</span>
-                      <span className="text-right font-semibold" style={{ color: '#C7A463' }}>
-                        {investment.metric}
-                      </span>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <span style={{ color: 'rgba(247, 244, 237, 0.62)' }}>Typical brief</span>
-                      <span className="text-right font-semibold" style={{ color: '#C7A463' }}>
-                        {investment.ticket}
-                      </span>
-                    </div>
-                  </div>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="w-full group/btn hover:bg-white/10"
-                    style={{ color: '#C7A463' }}
-                  >
-                    <a href="#contact">
-                      Discuss strategy
-                      <ArrowRight className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
-                    </a>
-                  </Button>
-                </Card>
-              </motion.div>
-            );
-          })}
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
 
         <p className="mt-8 text-xs leading-relaxed max-w-3xl" style={{ color: 'rgba(247, 244, 237, 0.55)' }}>
-          Figures and entry levels are indicative examples only. Property investments can rise or fall in value,
-          and suitability depends on individual circumstances, tax position, finance terms, and holding period.
+          ExComS provides property support and introductions where appropriate. Specialist legal, mortgage, tax, or survey advice should be taken from qualified professionals.
         </p>
       </div>
     </section>

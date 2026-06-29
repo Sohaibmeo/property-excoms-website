@@ -7,9 +7,9 @@ import { motion } from 'motion/react';
 import { Calendar, CheckCircle2 } from 'lucide-react';
 
 const expectations = [
-  'Brief review within one business day',
-  'Private discussion with a senior advisor',
-  'Clear next steps before any engagement',
+  'Enquiry review within one business day',
+  'A clear conversation about what you need',
+  'Simple next steps before any work begins',
 ];
 
 export function Contact() {
@@ -23,23 +23,22 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-14"
         >
-          <p className="section-kicker mb-3">Start With a Brief</p>
-          <h2 className="section-title mb-4">Tell us what the property decision needs to achieve.</h2>
+          <p className="section-kicker mb-3">Start Your Enquiry</p>
+          <h2 className="section-title mb-4">Tell us what you need help with.</h2>
           <p className="section-copy">
-            The best first conversation is specific. Share your goal, timing, approximate budget or asset value,
-            and any constraints you already know.
+            Share whether you want to buy, sell, rent, let, or manage a property, along with your preferred area and timing.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 h-full"
           >
-            <Card className="premium-card p-6 md:p-8 rounded-sm">
+            <Card className="premium-card p-6 md:p-8 rounded-sm h-full">
               <h3
                 className="text-2xl mb-6"
                 style={{
@@ -48,29 +47,29 @@ export function Contact() {
                   fontWeight: 600,
                 }}
               >
-                Request a private consultation
+                Request a property consultation
               </h3>
 
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input id="firstName" placeholder="Your first name" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last name</Label>
-                    <Input id="lastName" placeholder="Smith" />
+                    <Input id="lastName" placeholder="Your last name" />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email address</Label>
-                    <Input id="email" type="email" placeholder="john.smith@example.com" />
+                    <Input id="email" type="email" placeholder="you@example.com" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone number</Label>
-                    <Input id="phone" type="tel" placeholder="+44 20 1234 5678" />
+                    <Input id="phone" type="tel" placeholder="Your preferred number" />
                   </div>
                 </div>
 
@@ -83,10 +82,11 @@ export function Contact() {
                       style={{ backgroundColor: '#F7F4ED' }}
                     >
                       <option value="">Select a service</option>
-                      <option value="buy">Acquisition advisory</option>
-                      <option value="rent">Premium rental search</option>
-                      <option value="management">Landlord management review</option>
-                      <option value="investment">Investor sourcing</option>
+                      <option value="buy">Buy a property</option>
+                      <option value="sell">Sell a property</option>
+                      <option value="rent">Find a rental</option>
+                      <option value="let">Let a property</option>
+                      <option value="management">Landlord management</option>
                       <option value="consultation">General consultation</option>
                     </select>
                   </div>
@@ -107,10 +107,10 @@ export function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Brief</Label>
+                  <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
-                    placeholder="Tell us about your target location, budget, property type, investment goals, or management challenge."
+                    placeholder="Tell us about the property, location, budget, timing, or support you need."
                     rows={6}
                   />
                 </div>
@@ -121,7 +121,7 @@ export function Contact() {
                   className="w-full rounded-sm"
                   style={{ backgroundColor: '#17233B', color: '#F7F4ED' }}
                 >
-                  Submit confidential brief
+                  Submit enquiry
                 </Button>
               </form>
             </Card>
@@ -132,7 +132,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="grid gap-6 h-full"
           >
             <Card className="premium-card p-7 rounded-sm">
               <h3
@@ -157,21 +157,23 @@ export function Contact() {
               </div>
             </Card>
 
-            <Card className="p-7 border-none shadow-lg rounded-sm" style={{ backgroundColor: '#17233B' }}>
-              <Calendar size={42} className="mb-4" style={{ color: '#C7A463' }} />
-              <h3
-                className="text-2xl mb-3"
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  color: '#F7F4ED',
-                  fontWeight: 600,
-                }}
-              >
-                Prefer to speak first?
-              </h3>
-              <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
-                Book a short call to confirm whether we are the right advisory fit for your brief.
-              </p>
+            <Card className="p-7 border-none shadow-lg rounded-sm flex flex-col justify-between" style={{ backgroundColor: '#17233B' }}>
+              <div>
+                <Calendar size={42} className="mb-4" style={{ color: '#C7A463' }} />
+                <h3
+                  className="text-2xl mb-3"
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    color: '#F7F4ED',
+                    fontWeight: 600,
+                  }}
+                >
+                  Prefer to speak first?
+                </h3>
+                <p className="mb-6 leading-relaxed text-sm" style={{ color: 'rgba(247, 244, 237, 0.82)' }}>
+                  Book a short call and we will talk through the best next step for your property needs.
+                </p>
+              </div>
               <Button
                 asChild
                 size="lg"

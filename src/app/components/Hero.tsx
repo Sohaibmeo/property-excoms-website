@@ -2,21 +2,21 @@ import { Button } from './ui/button';
 import { motion } from 'motion/react';
 import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
-const trustSignals = ['Prime London acquisition', 'Landlord portfolio care', 'Private investor sourcing'];
+const trustSignals = ['Buy and sell support', 'Rental property help', 'Landlord management'];
 
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBwcm9wZXJ0eSUyMGFyY2hpdGVjdHVyZSUyMGV4dGVyaW9yfGVufDF8fHx8MTc4MjIxNTI0OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Private contemporary residence"
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1800"
+          alt="Residential property exterior"
           className="w-full h-full object-cover"
         />
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(90deg, rgba(16, 25, 43, 0.92) 0%, rgba(23, 35, 59, 0.78) 44%, rgba(23, 35, 59, 0.24) 100%)',
+            background: 'linear-gradient(90deg, rgba(8, 18, 35, 0.94) 0%, rgba(15, 30, 54, 0.84) 46%, rgba(15, 30, 54, 0.38) 100%)',
           }}
         />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#F7F4ED] to-transparent" />
@@ -38,7 +38,7 @@ export function Hero() {
                 fontWeight: 700,
               }}
             >
-              Discreet property advice for considered decisions.
+              Clear property help for buying, selling, and renting.
             </h1>
           </motion.div>
 
@@ -49,8 +49,7 @@ export function Hero() {
             className="text-lg md:text-xl mb-8 leading-relaxed"
             style={{ color: 'rgba(247, 244, 237, 0.9)', maxWidth: '680px' }}
           >
-            ExComS Property helps private buyers, landlords, and investors source, evaluate,
-            negotiate, and manage premium property with calm, evidence-led guidance.
+            ExComS Property helps buyers, sellers, tenants, and landlords move through the property market with practical guidance and steady support.
           </motion.p>
 
           <motion.div
@@ -65,8 +64,8 @@ export function Hero() {
               style={{ backgroundColor: '#C7A463', color: '#17233B' }}
               className="group hover:opacity-90 transition-all px-8 py-6 text-base rounded-sm"
             >
-              <a href="#opportunities">
-                View Curated Opportunities
+              <a href="#contact">
+                Start Your Enquiry
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </a>
             </Button>
@@ -78,7 +77,7 @@ export function Hero() {
             >
               <a href="#contact">
                 <Calendar className="mr-2" size={20} />
-                Book a Private Call
+                Book a Call
               </a>
             </Button>
           </motion.div>
