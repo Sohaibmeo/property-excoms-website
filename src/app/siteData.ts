@@ -13,14 +13,25 @@ import {
 } from 'lucide-react'
 
 export const property = {
-  brand: 'Luton Corporate Stays',
+  brand: 'ExComS Properties',
   address: '95 Park Street, Luton LU1 3HG',
-  eyebrow: 'Premium corporate accommodation',
+  shortAddress: '95 Park Street, Luton',
+  postcode: 'LU1 3HG',
+  eyebrow: 'Flexible property opportunity',
   title: 'Minutes from London Luton Airport',
   description:
-    'A complete corporate accommodation base designed for airport teams, airline crews, contractors, relocation partners and business professionals.',
-  units: '5 two-bedroom units',
+    'A flexible multi-unit property opportunity positioned minutes from London Luton Airport, suitable for a range of accommodation and leasing models.',
+  unitCount: 5,
+  units: 'Five two-bedroom units',
   commercial: 'Ground-floor office / commercial frontage',
+  layout: 'Multi-unit layout with ground-floor frontage',
+  imageLabel: 'CGI visual',
+}
+
+export const contact = {
+  email: 'leasing@lutoncorporatestays.co.uk',
+  teamAvailability: 'Available by appointment',
+  enquiryEndpoint: import.meta.env.VITE_ENQUIRY_ENDPOINT || '',
 }
 
 export const navItems = [
@@ -42,54 +53,54 @@ export const travelTimes = [
 ]
 
 export const features = [
-  { label: '5 two-bedroom units', icon: BedDouble },
+  { label: 'Five two-bedroom units', icon: BedDouble },
   { label: 'Commercial frontage', icon: Building2 },
   { label: 'High-speed Wi-Fi ready', icon: Wifi },
-  { label: 'Corporate leasing', icon: BriefcaseBusiness },
-  { label: 'Long-term potential', icon: Clock3 },
-  { label: 'Airport-linked location', icon: Plane },
+  { label: 'Flexible leasing enquiries', icon: BriefcaseBusiness },
+  { label: 'Long-term letting potential', icon: Clock3 },
+  { label: 'Near London Luton Airport', icon: Plane },
 ]
 
 export const useCases = [
   {
     title: 'Airport staff accommodation',
-    body: 'A practical base close to terminals, reducing transfer time for operational teams.',
+    body: 'A practical location for staff and business travellers who need convenient airport access.',
     icon: Plane,
   },
   {
     title: 'Airline crew housing',
-    body: 'Multi-unit flexibility for rotating crew stays and coordinated placements.',
+    body: 'A multi-unit layout that may suit organised crew stays, subject to relevant approvals.',
     icon: UsersRound,
   },
   {
     title: 'Contractor accommodation',
-    body: 'A well-connected long-stay option for project teams working across Luton.',
+    body: 'A well-connected option for project teams working in Luton and the surrounding area.',
     icon: BriefcaseBusiness,
   },
   {
     title: 'Relocation housing',
-    body: 'A convenient interim home for employees moving into the London–Luton corridor.',
+    body: 'Potential interim accommodation for people relocating to the London–Luton corridor.',
     icon: MapPin,
   },
   {
-    title: 'Operator opportunity',
-    body: 'Five two-bedroom units with potential for a unified serviced accommodation model.',
+    title: 'Short-stay operator enquiry',
+    body: 'Scope to discuss serviced or short-stay use, subject to planning, licensing and compliance.',
     icon: Laptop,
   },
   {
-    title: 'Office + accommodation',
-    body: 'Combine ground-floor commercial frontage with accommodation above.',
+    title: 'Long-term or investor enquiry',
+    body: 'Explore longer-term letting, investment or operator arrangements for the property.',
     icon: Building2,
   },
 ]
 
 export const galleryItems = [
-  { title: 'Exterior elevation', type: 'image' },
-  { title: 'Location & airport proximity', type: 'map' },
-  { title: 'Interior concept', type: 'interior' },
-  { title: 'Two-bedroom plans', type: 'plan' },
-  { title: 'Kitchen concept', type: 'kitchen' },
-  { title: 'Future virtual tour', type: 'tour' },
+  { title: 'Exterior elevation', type: 'image', label: 'CGI visual' },
+  { title: 'Location & airport proximity', type: 'map', label: 'Illustrative map' },
+  { title: 'Interior concept', type: 'interior', label: 'Placeholder visual' },
+  { title: 'Two-bedroom plans', type: 'plan', label: 'Concept plan' },
+  { title: 'Kitchen concept', type: 'kitchen', label: 'Placeholder visual' },
+  { title: 'Future virtual tour', type: 'tour', label: 'Coming soon' },
 ]
 
 export const leasingPoints = [
@@ -98,11 +109,23 @@ export const leasingPoints = [
   'Five two-bedroom units',
   'Office / commercial frontage',
   'Management discussion welcomed',
-  'Corporate leasing pack on request',
+  'Property information pack on request',
 ]
 
 export const ctaText = {
-  primary: 'Enquire for Corporate Leasing',
+  primary: 'Enquire About the Property',
   secondary: 'View Property Overview',
-  form: 'Request Tailored Leasing Proposal',
+  form: 'Send Property Enquiry',
+  pack: 'Request Property Pack',
+}
+
+export const disclaimers = {
+  travel:
+    'Travel times are indicative and must be independently verified before publication or reliance.',
+  compliance:
+    'Any use as serviced accommodation, short-stay accommodation, corporate housing or commercial accommodation is subject to planning permission, licensing, fire safety, insurance, building regulations and local authority requirements.',
+  general:
+    'Property information is indicative, may change and should be independently verified.',
+  imagery:
+    'CGI and placeholder visuals are illustrative and do not represent confirmed photography or final specification.',
 }
